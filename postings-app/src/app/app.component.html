@@ -1,0 +1,15 @@
+<div class="toolbar" role="banner">
+  <a aria-label="Home" rel="noopener" routerLink="/" title="Home">
+    <img
+      style="width: 10rem"
+      alt="SmartRecruters Logo"
+      src="./assets/images/srlogo-2019-fullcolor.png"
+    />
+  </a>
+</div>
+
+<div class="container-md" [attr.data-test]="'app'">
+  <div class="d-flex justify-content-center bodyApp">
+    <router-outlet></router-outlet>
+  </div>
+</div>

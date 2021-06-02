@@ -1,0 +1,59 @@
+.title {
+  //text-align: center;
+  div{
+    margin: 10px 0 0 10px;
+    span{
+      vertical-align: top;
+      font-size: 18px;
+    }
+  }
+  mat-icon{
+    cursor: pointer;
+  }
+  div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.content {
+  width: 100%;
+  border: solid red 0px;
+  float: left;
+  margin: 10px 0 0 10px;
+  max-height: 80vh;
+  overflow: auto;
+  .positionsTitle{
+    .position{
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .location{
+      font-size: 15px;
+    }
+  }
+  .jobDescription{
+    margin: 16px 0 0 0;
+    .title{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #jobDescriptionText{
+    width: 98%;
+    }
+  }
+  .jqualifications{
+    margin: 16px 0 0 0;
+    .title{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #qualificationsText{
+
+    }
+  }
+}
+#msgNotFound{
+  text-align: center
+}

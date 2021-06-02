@@ -1,0 +1,56 @@
+
+  <div class="title">
+    <h1>SmartRecruiters Postings List App</h1>
+  </div>
+  <div class="filters">
+    <div class="country">
+      <mat-form-field >
+        <mat-label>Country</mat-label>
+        <input type="text"
+               aria-label="Country"
+               matInput
+               id="countryField"
+               [formControl]="countryControl"
+               [matAutocomplete]="countryAuto">
+        <mat-autocomplete  autoActiveFirstOption #countryAuto="matAutocomplete" [displayWith]="getCtryTxt" (optionSelected)="selectedOption($event, 'country')">
+          <mat-option [value]="'All'">All</mat-option>
+          <mat-option *ngFor="let country of filteredCountries | async" [value]="country" [id]="country.alpha2Code">
+            {{country.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="department">
+      <mat-form-field >
+        <mat-label>Department</mat-label>
+        <input type="text"
+               aria-label="Department"
+               matInput
+               id="departmentField"
+               [formControl]="departmentControl"
+               [matAutocomplete]="departmentAuto">
+        <mat-autocomplete autoActiveFirstOption #departmentAuto="matAutocomplete" [displayWith]="getDepTxt" (optionSelected)="selectedOption($event, 'department')">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let department of filteredDepartments | async" [value]="department" [id]="department.id">
+            {{department.label}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="content">
+    <div *ngIf="showLoading">
+      <mat-spinner class="loading"></mat-spinner>
+    </div>
+    <div *ngIf="postings.totalFound !== 0 && !showLoading ; else showMsg" class="positionsList" [attr.data-test]="'posting'">
+      <div *ngFor="let pos of postings.content" (click)="selectedPosting(pos.id)" [id]="pos.id">
+        <span class="position" [attr.data-test]="'posting-name'">{{pos.name}}</span>
+        <br />
+        <span class="location" [attr.data-test]="'posting-location'">{{pos.location.city + ', ' + pos.location.country}}</span>
+      </div>
+    </div>
+    <ng-template #showMsg>
+      <h2 id="msgNotFound" *ngIf="!showLoading">Postings not found</h2>
+    </ng-template>
+
+  </div>

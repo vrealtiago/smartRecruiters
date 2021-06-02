@@ -1,0 +1,64 @@
+.title {
+  text-align: center;
+}
+.filters {
+  width: 99%;
+  border: solid red 0px;
+  float: left;
+  margin: 0 0 0 10px;
+  .country,
+  .department{
+    width: 50%;
+    float: left;
+    mat-form-field{
+      width: 80%;
+      min-width: 300px;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  border: solid red 0px;
+  float: left;
+  margin-top: 10px;
+  max-height: 80vh;
+  overflow: auto;
+  .positionsList{
+    margin: 0 0 0 10px;
+    div {
+      width: 100%;
+      float: left;
+      margin: 15px 0 0 0;
+    }
+    .position{
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .position:hover{
+      color: #00ae41;
+      text-decoration: underline;
+    }
+    .location{
+      font-size: 15px;
+    }
+    .location:hover{
+      color: #00ae41;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.loading{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+#msgNotFound{
+  text-align: center
+}

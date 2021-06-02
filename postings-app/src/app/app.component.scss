@@ -1,0 +1,42 @@
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  font-weight: 600;
+  border-bottom: solid 1px #00ae41
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+  opacity: 0.8;
+}
+
+.bodyApp {
+  border: solid gray 1px;
+  min-width: 480px;
+  margin: 10px 0 0 0;
+}
+.sideBar{
+  border: solid inherit 0.1px;
+  float: left;
+}

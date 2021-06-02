@@ -1,0 +1,26 @@
+<div class="title">
+  <div [routerLink]="['/postings-list']" [attr.data-test]="'back'">
+    <mat-icon aria-hidden="false" aria-label="Back to the list">keyboard_backspace</mat-icon><span>Back to the list</span>
+  </div>
+</div>
+<div *ngIf="showDetails; else showMsg">
+  <div class="content">
+    <div class="positionsTitle">
+      <span class="position" [attr.data-test]="'posting-name'">{{posting?.name}}</span>
+      <br />
+      <span class="location" [attr.data-test]="'posting-location'">{{posting?.location.city + ', ' + posting?.location.country}}</span>
+    </div>
+    <div class="jobDescription" [attr.data-test]="'job-description'">
+      <span class="title">{{posting?.jobAd.sections.jobDescription.title}}</span>
+      <div id="jobDescriptionText"></div>
+    </div>
+    <div class="jqualifications" [attr.data-test]="'job-qualifications'">
+      <span class="title">{{posting?.jobAd.sections.qualifications.title}}</span>
+      <div id="qualificationsText"></div>
+    </div>
+  </div>
+</div>
+<ng-template #showMsg>
+  <h2 id="msgNotFound">Posting not found</h2>
+</ng-template>
+
